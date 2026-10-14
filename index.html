@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VoiceStudio — бесплатный ElevenLabs на твоём компе</title>
+<meta name="description" content="VoiceStudio: открытая замена ElevenLabs — клон голоса, дубляж, диктовка и аудиокниги на 646 языках, локально. Установка и первый клон. От @artemh_ai.">
+<meta property="og:title" content="VoiceStudio — бесплатный ElevenLabs на твоём компе">
+<meta property="og:description" content="Клон голоса без подписки и без облака. Ссылка, установка, первый клон.">
+<meta property="og:type" content="article">
+<meta name="theme-color" content="#141413">
+<style>
+  :root {
+    --bg: #141413;
+    --card: #1f1e1d;
+    --line: #2e2d2b;
+    --text: #f0eee6;
+    --muted: #a3a09a;
+    --accent: #d97757;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 28px 18px calc(40px + env(safe-area-inset-bottom));
+  }
+  main { max-width: 560px; margin: 0 auto; }
+  .tag {
+    display: inline-block;
+    font: 600 12px/1 ui-monospace, "SF Mono", Menlo, monospace;
+    letter-spacing: .08em;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 6px 8px;
+  }
+  h1 { font-size: 30px; line-height: 1.15; margin: 16px 0 10px; letter-spacing: -.01em; }
+  .lead { color: var(--muted); }
+  ol { list-style: none; margin-top: 22px; }
+  .item {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+    margin-top: 12px;
+  }
+  .num { font: 600 13px ui-monospace, "SF Mono", Menlo, monospace; color: var(--accent); }
+  h2 { font-size: 19px; line-height: 1.3; margin: 2px 0 6px; }
+  p + p { margin-top: 8px; }
+  .item p { color: #d6d3cb; font-size: 16px; }
+  code {
+    font: 14px ui-monospace, "SF Mono", Menlo, monospace;
+    background: #2a2927; color: var(--text);
+    border-radius: 5px; padding: 1px 6px; overflow-wrap: anywhere;
+  }
+  .bonus { border-color: var(--accent); }
+  .bonus .num { color: var(--accent); }
+  .cta { margin-top: 28px; text-align: center; }
+  .cta p { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
+  .btn {
+    display: block; width: 100%;
+    font: 600 17px/1 inherit; font-family: inherit;
+    padding: 16px; border-radius: 12px; border: 0;
+    text-decoration: none; cursor: pointer;
+  }
+  .btn-main { background: var(--accent); color: #fff; }
+  .foot { margin-top: 26px; text-align: center; font-size: 13px; color: #6f6c66; }
+  .top { margin-top: 18px; }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .prompt {
+    margin-top: 10px; background: #2a2927; border-radius: 10px; padding: 12px 14px;
+    font: 14px/1.45 ui-monospace, "SF Mono", Menlo, monospace; color: var(--text); white-space: pre-wrap; overflow-wrap: anywhere;
+  }
+  .copy { margin-top: 10px; padding: 12px; font-size: 15px; }
+  .item ul { list-style: none; margin-top: 8px; }
+  .item li + li { margin-top: 8px; }
+  .item li { color: #d6d3cb; font-size: 16px; padding-left: 14px; position: relative; }
+  .item li::before { content: "·"; position: absolute; left: 2px; color: var(--accent); }
+  a { color: var(--accent); }
+  .tg { margin-top: 28px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px 16px; text-align: center; }
+  .tg h2 { margin: 0 0 6px; }
+  .tg p { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
+  .btn-tg { background: #2aabee; color: #fff; }
+  .toast {
+    position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom));
+    transform: translateX(-50%) translateY(20px); opacity: 0;
+    background: var(--text); color: var(--bg);
+    padding: 10px 16px; border-radius: 10px; font-size: 15px;
+    transition: .2s; pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">ИНСТРУМЕНТ · ГОЛОС</span>
+  <h1>VoiceStudio — бесплатный ElevenLabs на твоём компе</h1>
+  <p class="lead">Открытый проект на GitHub (лицензия AGPL-3.0): клон голоса, дизайн голоса, дубляж видео, диктовка, расшифровка и аудиокниги — на 646 языках. Всё считается на твоём компьютере, без аккаунта и подписки. Октябрь 2026.</p>
+
+  <a class="btn btn-main top" href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener">Открыть VoiceStudio на GitHub</a>
+
+  <ol>
+    <li class="item">
+      <span class="num">01</span>
+      <h2>Что нужно</h2>
+      <ul>
+        <li><b>Mac на Apple Silicon</b> (M1 и новее) — быстро, через Metal.</li>
+        <li><b>Windows или Linux</b> — с видеокартой NVIDIA быстрее, без неё работает на процессоре, просто медленнее. Нужно около 5 ГБ на диске.</li>
+        <li>Mac на Intel — только интерфейс, считать придётся на другом компьютере.</li>
+      </ul>
+    </li>
+    <li class="item">
+      <span class="num">02</span>
+      <h2>Поставь одной командой</h2>
+      <p>Mac и Linux — в Терминале:</p>
+      <div class="prompt" id="p1">curl -fsSL https://voicestudio.sh/install | sh</div>
+      <button class="btn btn-main copy" data-copy="p1">Скопировать команду</button>
+      <p style="margin-top:10px">Windows — в PowerShell:</p>
+      <div class="prompt" id="p2">irm https://voicestudio.sh/install | iex</div>
+      <button class="btn btn-main copy" data-copy="p2">Скопировать команду</button>
+      <p style="margin-top:10px">Команды — из официального README. Без терминала: скачай установщик (.dmg / .exe / .AppImage) в <a href="https://github.com/debpalash/VoiceStudio/releases/latest" target="_blank" rel="noopener">Releases</a>.</p>
+    </li>
+    <li class="item">
+      <span class="num">03</span>
+      <h2>Или пусть поставит Клод</h2>
+      <p>Вставь в Claude Code (или Codex, Cursor):</p>
+      <div class="prompt" id="p3">Установи приложение VoiceStudio (Electron) на этот компьютер и проверь, что оно работает. Действуй по инструкции https://github.com/debpalash/VoiceStudio/blob/main/docs/install/agent.md</div>
+      <button class="btn btn-main copy" data-copy="p3">Скопировать промпт</button>
+      <p style="margin-top:10px">Агент сам определит железо и спросит перед скачиванием моделей.</p>
+    </li>
+    <li class="item">
+      <span class="num">04</span>
+      <h2>Первый клон</h2>
+      <ul>
+        <li>Открой <b>Voice cloning</b>.</li>
+        <li>Добавь чистую запись своего голоса — в тишине, без музыки и эха.</li>
+        <li>Напиши текст и нажми <b>Synthesize</b>. Нужную модель приложение предложит скачать само.</li>
+      </ul>
+    </li>
+    <li class="item bonus">
+      <span class="num">ЕЩЁ</span>
+      <h2>Что там есть кроме клона</h2>
+      <ul>
+        <li><b>Дубляж:</b> загрузи видео — расшифрует, переведёт и озвучит тем же голосом.</li>
+        <li><b>Диктовка:</b> плавающий микрофон печатает текст в любое окно.</li>
+        <li><b>Расшифровка</b> с разметкой, кто что сказал.</li>
+        <li><b>Аудиокниги</b> и пакетная озвучка.</li>
+        <li>Локальный API и MCP — можно подключить к агентам.</li>
+      </ul>
+    </li>
+    <li class="item">
+      <span class="num">ВАЖНО</span>
+      <h2>Честно</h2>
+      <ul>
+        <li>Клонируй только свой голос — или с согласия человека. В приложении есть водяной знак ИИ.</li>
+        <li>Как звучит русский, зависит от записи и модели — попробуй на своём голосе.</li>
+        <li>Делаешь на его коде свой продукт — сначала прочитай лицензию AGPL-3.0.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="tg">
+    <h2>Больше разборов — в Telegram</h2>
+    <p>Канал «Out of Tokens — ИИ и Вайбкод»: развёрнутые разборы инструментов и закулисье роликов.</p>
+    <a class="btn btn-tg" href="https://t.me/artemh_ai" target="_blank" rel="noopener">Открыть канал в Telegram</a>
+  </div>
+
+  <div class="cta">
+    <p>Знаешь, кто до сих пор платит за озвучку?</p>
+    <button class="btn btn-main" id="share">Переслать</button>
+  </div>
+
+  <p class="foot">@artemh_ai · ИИ и вайбкод</p>
+</main>
+
+<div class="toast" id="toast">Скопировано</div>
+
+<script>
+  const toast = s => { const t = document.getElementById('toast'); t.textContent = s; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1800); };
+  document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+    await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);
+    toast('Скопировано');
+  }));
+  document.getElementById('share').addEventListener('click', async () => {
+    const data = { title: document.title, text: 'VoiceStudio — бесплатный ElevenLabs на твоём компе', url: location.href };
+    if (navigator.share) { try { await navigator.share(data); } catch (e) {} return; }
+    await navigator.clipboard.writeText(location.href);
+    toast('Ссылка скопирована');
+  });
+</script>
+</body>
+</html>
